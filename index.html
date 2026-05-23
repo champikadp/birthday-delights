@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Birthday Delights — Custom Cakes, Melbourne's North</title>
+<meta name="description" content="Handmade custom birthday cakes made with real butter and the finest ingredients. Serving Mernda, Epping and Melbourne's northern suburbs. Where every slice feels like home."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --display: 'Cormorant Garamond', serif;
+  --script: 'Sacramento', cursive;
+  --body: 'Jost', sans-serif;
+
+  /* Warm rustic palette */
+  --cream:    #FAF6EF;
+  --parchment:#F0E8D8;
+  --blush:    #E8C4B0;
+  --rose:     #C4785A;
+  --rose-dark:#8B4A32;
+  --sage:     #7A8C6E;
+  --sage-light:#B5C4A8;
+  --brown:    #3D2B1F;
+  --brown-mid:#6B4C3B;
+  --muted:    #8C7B6E;
+  --border:   rgba(61,43,31,0.12);
+  --gold:     #C4A862;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--brown);
+  overflow-x: hidden;
+}
+
+/* Grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,246,239,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--script);
+  font-size: 1.8rem;
+  color: var(--rose);
+  text-decoration: none;
+  line-height: 1;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--rose); }
+.nav-order {
+  background: var(--rose);
+  color: white !important;
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  transition: background .2s !important;
+}
+.nav-order:hover { background: var(--rose-dark) !important; color: white !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  background: var(--parchment);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+  position: relative;
+  z-index: 2;
+  animation: fade-up 1s ease both;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Decorative corner flourish */
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: 2rem; left: 2rem;
+  width: 60px; height: 60px;
+  border-top: 1.5px solid var(--blush);
+  border-left: 1.5px solid var(--blush);
+}
+.hero-left::after {
+  content: '';
+  position: absolute;
+  bottom: 2rem; right: 0;
+  width: 60px; height: 60px;
+  border-bottom: 1.5px solid var(--blush);
+  border-right: 1.5px solid var(--blush);
+}
+
+.hero-script {
+  font-family: var(--script);
+  font-size: 1.4rem;
+  color: var(--rose);
+  margin-bottom: 0.5rem;
+  animation: fade-up 1s ease 0.1s both;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--brown);
+  margin-bottom: 1rem;
+  animation: fade-up 1s ease 0.2s both;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--rose);
+  font-weight: 300;
+}
+.hero-tagline {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: fade-up 1s ease 0.3s both;
+}
+.hero-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 360px;
+  margin-bottom: 2.5rem;
+  animation: fade-up 1s ease 0.4s both;
+}
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fade-up 1s ease 0.5s both;
+}
+.btn-primary {
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: var(--rose-dark); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  color: var(--brown);
+  border: 1px solid var(--border);
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color .2s, background .2s;
+}
+.btn-outline:hover { border-color: var(--rose); background: rgba(196,120,90,0.05); }
+
+/* Hero right — illustrated cake display */
+.hero-right {
+  background: var(--rose);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-up 1s ease 0.2s both;
+}
+
+/* Diagonal stripe pattern */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 16px
+  );
+}
+
+.cake-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.cake-emoji {
+  font-size: 8rem;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.cake-label {
+  font-family: var(--script);
+  font-size: 2.2rem;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+}
+.cake-sub {
+  font-family: var(--body);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Scattered dots */
+.dots-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  animation: drift linear infinite;
+}
+@keyframes drift {
+  from { transform: translateY(100%) scale(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.5; }
+  to   { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
+/* ── PROMISE BAND ── */
+.promise-band {
+  background: var(--brown);
+  color: rgba(250,246,239,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+.promise-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.promise-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--rose); }
+
+/* ── SECTION COMMONS ── */
+.section { padding: 5rem 2rem; position: relative; z-index: 1; }
+.section-inner { max-width: 1000px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-script {
+  font-family: var(--script);
+  font-size: 1.6rem;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--brown);
+}
+.section-title em { font-style: italic; color: var(--rose); }
+.section-sub {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 1rem auto 0;
+}
+
+/* ── SPECIALTIES ── */
+.specialties { background: var(--parchment); }
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.spec-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+}
+.spec-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.spec-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(61,43,31,0.1); }
+.spec-card:hover::before { transform: scaleX(1); }
+.spec-emoji { font-size: 2.8rem; display: block; margin-bottom: 1rem; }
+.spec-card h3 {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.spec-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── STORY ── */
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.story-visual {
+  position: relative;
+  height: 420px;
+  background: var(--parchment);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Decorative recipe card look */
+.story-visual::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed var(--blush);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.story-cakes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+}
+.story-cake-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(61,43,31,0.06);
+}
+.story-cake-item span { font-size: 2.2rem; display: block; margin-bottom: 4px; }
+.story-cake-item p {
+  font-family: var(--display);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+}
+.story-text .section-script { text-align: left; }
+.story-text h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.story-text h2 em { font-style: italic; color: var(--rose); }
+.story-text p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+.story-text p:last-of-type { margin-bottom: 2rem; }
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ingredient-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--brown-mid);
+}
+.ingredient-row::before {
+  content: '✦';
+  color: var(--rose);
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+/* ── HOW IT WORKS ── */
+.howitworks { background: var(--parchment); }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+/* Connecting line */
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 1rem);
+  right: calc(12.5% + 1rem);
+  height: 1px;
+  background: var(--blush);
+}
+.step {
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid var(--blush);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--rose);
+  position: relative;
+  z-index: 1;
+}
+.step h4 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.step p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+/* ── ORDER FORM ── */
+.order-section { background: var(--brown); }
+.order-section .section-title { color: var(--cream); }
+.order-section .section-script { color: var(--blush); }
+.order-section .section-sub { color: rgba(250,246,239,0.6); }
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 4rem;
+  align-items: start;
+}
+.order-info h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+.order-info h3 em { font-style: italic; color: var(--blush); }
+.order-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.order-detail-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.order-detail p { font-size: 13px; color: rgba(250,246,239,0.6); line-height: 1.6; }
+.order-detail strong { color: var(--cream); display: block; font-size: 13px; margin-bottom: 2px; font-weight: 500; }
+
+/* Form */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(250,246,239,0.05);
+  border: 1px solid rgba(250,246,239,0.1);
+  border-radius: 4px;
+  padding: 2rem;
+}
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.form-group label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250,246,239,0.5);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  min-width: 0;
+  background: rgba(250,246,239,0.08);
+  border: 1px solid rgba(250,246,239,0.15);
+  border-radius: 3px;
+  padding: 10px 14px;
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 13px;
+  outline: none;
+  transition: border-color .2s;
+  resize: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(250,246,239,0.3); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blush);
+  background: rgba(250,246,239,0.12);
+}
+.form-group select option { background: var(--brown); color: var(--cream); }
+.form-group textarea { min-height: 100px; line-height: 1.6; }
+.btn-submit {
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-submit:hover { background: var(--rose-dark); transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.form-success-msg {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  color: var(--cream);
+}
+.form-success-msg .success-emoji { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.form-success-msg h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 300; margin-bottom: 0.5rem; }
+.form-success-msg p { font-size: 13px; color: rgba(250,246,239,0.6); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--brown);
+  border-top: 1px solid rgba(250,246,239,0.08);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.footer-logo {
+  font-family: var(--script);
+  font-size: 2rem;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.footer-tagline {
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(250,246,239,0.4);
+  margin-bottom: 1.2rem;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
+}
+.footer-links a {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,246,239,0.4);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--blush); }
+.footer-copy {
+  font-size: 11px;
+  color: rgba(250,246,239,0.2);
+  letter-spacing: 0.08em;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 3.5rem 1.5rem; }
+  .hero-right { height: 280px; }
+  .story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .story-visual { height: 280px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid::before { display: none; }
+  .order-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .section { padding: 3.5rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Birthday Delights</a>
+  <ul class="nav-links">
+    <li><a href="#specialties">Our Cakes</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#order" class="nav-order">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-script">Handmade with love</span>
+    <h1>Where every slice<br>feels like <em>home</em></h1>
+    <p class="hero-tagline">Custom birthday cakes made with real butter<br>and the finest ingredients — just like mum's.</p>
+    <p class="hero-desc">Based in Mernda, Melbourne's north. Every cake is made from scratch, by hand, with the same care a mother puts into baking for her own family.</p>
+    <div class="hero-btns">
+      <a href="#order" class="btn-primary">Order your cake</a>
+      <a href="#specialties" class="btn-outline">See our cakes</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="dots-bg" id="dots"></div>
+    <div class="cake-display">
+      <div class="cake-emoji">🎂</div>
+      <div class="cake-label">Made with love</div>
+      <div class="cake-sub">Mernda · Melbourne's North</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE BAND -->
+<div class="promise-band">
+  <div class="promise-item"><div class="promise-dot"></div>Real butter, always</div>
+  <div class="promise-item"><div class="promise-dot"></div>Finest ingredients</div>
+  <div class="promise-item"><div class="promise-dot"></div>Made from scratch</div>
+  <div class="promise-item"><div class="promise-dot"></div>Custom designs</div>
+  <div class="promise-item"><div class="promise-dot"></div>Melbourne's North</div>
+</div>
+
+<!-- SPECIALTIES -->
+<section class="section specialties" id="specialties">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-script">What we make</span>
+      <h2 class="section-title">A cake for every <em>celebration</em></h2>
+      <p class="section-sub">Whether you're after a whimsical themed cake or an elegantly decorated showpiece, every creation is made with the same love and care.</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <span class="spec-emoji">🦄</span>
+        <h3>Custom Themed</h3>
+        <p>Characters, hobbies, interests — whatever makes them smile. We bring any idea to life with hand-crafted detail.</p>
+      </div>
+      <div class="spec-card">
+        <span class="spec-emoji">🌸</span>
+        <h3>Elegant Floral</h3>
+        <p>Delicate flowers, soft textures and refined designs for those who want something truly beautiful.</p>
+      </div>
+      <div class="spec-card">
+        <span class="spec-emoji">🍫</span>
+        <h3>Drip & Ganache</h3>
+        <p>Rich chocolate drips, glossy ganache and decadent toppings for the chocolate lovers in your life.</p>
+      </div>
+      <div class="spec-card">
+        <span class="spec-emoji">🎨</span>
+        <h3>Fondant Art</h3>
+        <p>Smooth fondant finishes with sculpted decorations — the canvas for our most detailed artistic work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section" id="story">
+  <div class="section-inner">
+    <div class="story-inner">
+      <div class="story-visual">
+        <div class="story-cakes">
+          <div class="story-cake-item"><span>🧈</span><p>Real butter</p></div>
+          <div class="story-cake-item"><span>🥚</span><p>Fresh eggs</p></div>
+          <div class="story-cake-item"><span>🍦</span><p>Finest cream</p></div>
+          <div class="story-cake-item"><span>❤️</span><p>Made with love</p></div>
+        </div>
+      </div>
+      <div class="story-text">
+        <span class="section-script">Our story</span>
+        <h2>Baking like a <em>mother would</em></h2>
+        <p>There's something special about a cake made at home — the smell of real butter warming in the oven, the care that goes into every layer, the love that makes it taste different from anything you'd buy in a store.</p>
+        <p>Birthday Delights was born from that belief. Based in Mernda in Melbourne's north, every cake we make uses real butter, the finest ingredients, and the kind of attention a mother gives when she bakes for her own family.</p>
+        <p>Because your celebration deserves more than ordinary.</p>
+        <div class="ingredients-list">
+          <div class="ingredient-row">Real butter — always, no substitutes</div>
+          <div class="ingredient-row">Premium flour and finest-quality cocoa</div>
+          <div class="ingredient-row">Fresh eggs and real vanilla</div>
+          <div class="ingredient-row">Made from scratch, every single time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section howitworks" id="how">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-script">Simple as can be</span>
+      <h2 class="section-title">How to order your <em>cake</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Send an inquiry</h4>
+        <p>Tell us about your event — the date, theme, flavour, and how many people you're feeding.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We chat & design</h4>
+        <p>We'll get back to you within 24 hours to discuss your vision and provide a quote.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Baked with love</h4>
+        <p>Your cake is made fresh from scratch using only the finest ingredients.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Pick up & celebrate</h4>
+        <p>Collect your cake from Mernda and get ready for the smiles when they see it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="section order-section" id="order">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-script">Let's create something special</span>
+      <h2 class="section-title" style="color:var(--cream)">Order your <em style="color:var(--blush)">cake</em></h2>
+      <p class="section-sub">Fill in the form below and we'll be in touch within 24 hours to discuss your order.</p>
+    </div>
+    <div class="order-grid">
+      <div class="order-info">
+        <h3>A few things<br>to <em>know</em></h3>
+        <div class="order-detail">
+          <div class="order-detail-icon">📅</div>
+          <div>
+            <strong>Order ahead</strong>
+            <p>We recommend ordering at least 2 weeks in advance to ensure availability for your date.</p>
+          </div>
+        </div>
+        <div class="order-detail">
+          <div class="order-detail-icon">📍</div>
+          <div>
+            <strong>Pick up from Mernda</strong>
+            <p>Cakes are available for pick up from Mernda, Melbourne's north. Exact address provided on confirmation.</p>
+          </div>
+        </div>
+        <div class="order-detail">
+          <div class="order-detail-icon">💬</div>
+          <div>
+            <strong>We'll be in touch</strong>
+            <p>After your inquiry, we'll contact you within 24 hours to discuss your design, confirm pricing, and lock in your date.</p>
+          </div>
+        </div>
+        <div class="order-detail">
+          <div class="order-detail-icon">📞</div>
+          <div>
+            <strong>Prefer to call?</strong>
+            <p>0469 850 337</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-success-msg" id="form-success">
+          <span class="success-emoji">🎂</span>
+          <h3>Thank you for your inquiry!</h3>
+          <p>We'll be in touch within 24 hours to discuss your cake. We can't wait to create something special for you.</p>
+        </div>
+        <div class="inquiry-form" id="inquiry-form">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Your name</label>
+              <input type="text" id="f-name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" id="f-email" placeholder="jane@example.com" required/>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Phone number</label>
+              <input type="text" id="f-phone" placeholder="04xx xxx xxx"/>
+            </div>
+            <div class="form-group">
+              <label>Event date</label>
+              <input type="date" id="f-date"/>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Cake type</label>
+              <select id="f-type">
+                <option value="">Select a style...</option>
+                <option>Custom themed cake</option>
+                <option>Elegant floral cake</option>
+                <option>Drip & ganache cake</option>
+                <option>Fondant art cake</option>
+                <option>Not sure — surprise me!</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Number of serves</label>
+              <select id="f-serves">
+                <option value="">Select...</option>
+                <option>Up to 10</option>
+                <option>10 – 20</option>
+                <option>20 – 30</option>
+                <option>30 – 50</option>
+                <option>50+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell us about your cake</label>
+            <textarea id="f-message" placeholder="Who's the cake for? What's the theme or occasion? Any flavours, colours or special requests? The more detail the better!"></textarea>
+          </div>
+          <button class="btn-submit" id="submit-btn" onclick="submitInquiry()">
+            ✦ Send my inquiry
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Birthday Delights</span>
+  <div class="footer-tagline">Where every slice feels like home</div>
+  <div class="footer-links">
+    <a href="#specialties">Our Cakes</a>
+    <a href="#story">Our Story</a>
+    <a href="#how">How It Works</a>
+    <a href="#order">Order Now</a>
+  </div>
+  <div class="footer-copy">© 2026 Birthday Delights · Mernda, Melbourne VIC · birthdaydelights.au</div>
+</footer>
+
+<script>
+  // Floating dots animation
+  const dotsContainer = document.getElementById('dots');
+  for (let i = 0; i < 12; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    const size = Math.random() * 40 + 10;
+    dot.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      bottom: -${size}px;
+      animation-duration: ${Math.random() * 6 + 5}s;
+      animation-delay: ${Math.random() * 6}s;
+    `;
+    dotsContainer.appendChild(dot);
+  }
+
+  // Form submission
+  async function submitInquiry() {
+    const btn = document.getElementById('submit-btn');
+    const name    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    if (!name || !email || !message) {
+      alert('Please fill in your name, email and cake description.');
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    const data = {
+      name,
+      email,
+      phone:   document.getElementById('f-phone').value.trim(),
+      date:    document.getElementById('f-date').value,
+      type:    document.getElementById('f-type').value,
+      serves:  document.getElementById('f-serves').value,
+      message,
+    };
+    try {
+      const res = await fetch('https://formspree.io/f/xlgvjeab', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        document.getElementById('inquiry-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '✦ Send my inquiry';
+        alert('Something went wrong. Please try again or call us on 0469 850 337.');
+      }
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = '✦ Send my inquiry';
+      alert('Network error. Please check your connection and try again.');
+    }
+  }
+</script>
+</body>
+</html>
